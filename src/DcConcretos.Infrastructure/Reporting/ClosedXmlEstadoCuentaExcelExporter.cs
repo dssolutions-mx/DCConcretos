@@ -1,4 +1,5 @@
 using System.Data;
+using System.Globalization;
 using ClosedXML.Excel;
 using DcConcretos.Application.Reporting;
 
@@ -23,7 +24,11 @@ public sealed class ClosedXmlEstadoCuentaExcelExporter : IEstadoCuentaExcelExpor
                 if (v is DBNull)
                     ws.Cell(row, c + 1).Clear();
                 else
-                    ws.Cell(row, c + 1).Value = v!;
+                {
+                    // ClosedXML 0.102+ requires XLCellValue; avoid implicit object assignment (fails CI / strict compile).
+                    var text = Convert.ToString(v, CultureInfo.InvariantCulture) ?? string.Empty;
+                    ws.Cell(row, c + 1).Value = text;
+                }
             }
             row++;
         }
