@@ -113,6 +113,15 @@ Older copies of SQL/config may exist next to this clone (`OLD*`, `Old*`, `REPORT
 
 ---
 
+## Alternativa más simple (Python, pruebas en Mac)
+
+Si lo que más necesitan son **cargas en lote** y quieren **desarrollar y probar desde Mac** contra el SQL Server remoto (misma VPN/red que ya usan), hay un **CLI mínimo en Python** en [`batch-cli/`](batch-cli/) (`README.md` en esa carpeta, en español). Hoy incluye:
+
+- `ping` — comprobar conexión con `SELECT 1` (requiere driver ODBC en la Mac).
+- `compras --dry-run` — esqueleto sin escrituras hasta definir bien el flujo (SDK / paridad con el EXE viejo).
+
+La app **.NET WPF** sigue siendo válida si prefieren un programa con ventanas en Windows de escritorio; Python y .NET pueden convivir: mismo cuidado con **credenciales** y **base de prueba**.
+
 ## License / CONTPAQi
 
 CONTPAQi Comercial is third-party software. SDK licensing and supported versions must be confirmed with your **CONTPAQi distributor** before shipping batch writes. See [`docs/dcconcretos-rebuild/11-risks-and-dependencies.md`](docs/dcconcretos-rebuild/11-risks-and-dependencies.md).

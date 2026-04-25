@@ -2,6 +2,10 @@
 *.exe
 *.dll
 
+# Python (batch-cli local env)
+.venv/
+**/.venv/
+
 # Build
 bin/
 obj/

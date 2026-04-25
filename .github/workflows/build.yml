@@ -28,3 +28,18 @@ jobs:
         run: dotnet build DcConcretos.sln -c Release --no-restore
       - name: Test
         run: dotnet test DcConcretos.sln -c Release --no-build --verbosity normal
+
+  python-cli:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: batch-cli
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install CLI (dev)
+        run: pip install -e ".[dev]"
+      - name: Pytest
+        run: pytest -q
