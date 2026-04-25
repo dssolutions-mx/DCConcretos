@@ -1,0 +1,15 @@
+flowchart TB
+  subgraph client [Windows_client]
+    UI[WinForms_UI]
+    Forms[Forms_EstadoCuenta_Cargas]
+    Modelo[Modelo_dll_SqlClient]
+    Excel[ClosedXML_OpenXML]
+    UI --> Forms
+    Forms --> Modelo
+    Forms --> Excel
+  end
+  subgraph sql [SQL_Server]
+    DB[(Company_DB_adCONCRETOS)]
+  end
+  Modelo -->|T_SQL| DB
+  Config[exe_config] -.-> Modelo

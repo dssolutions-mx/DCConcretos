@@ -1,0 +1,24 @@
+flowchart LR
+  subgraph forms [Batch_forms]
+    FC[FrmCargaCompras]
+    FD[FrmCargaDiesel]
+    FR[FrmCargaRemisiones]
+    FS[FrmEstadoDeCuentaProveedor]
+  end
+  subgraph io [Inputs_outputs]
+    XLS[xlsx_or_clipboard]
+    CFG[rutaArchivo_star]
+  end
+  subgraph data [Data_plane]
+    SQL[Modelo_SqlClient]
+    DB[(Comercial_company_DB)]
+  end
+  FC --> XLS
+  FD --> CFG
+  FR --> CFG
+  FS --> XLS
+  FC --> SQL
+  FD --> SQL
+  FR --> SQL
+  FS --> SQL
+  SQL --> DB

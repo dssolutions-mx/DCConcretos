@@ -1,0 +1,20 @@
+# Legacy / local deployment binaries (not source-controlled)
+*.exe
+*.dll
+
+# Build
+bin/
+obj/
+out/
+*.user
+*.suo
+.vs/
+
+# Local secrets (never commit)
+appsettings.Local.json
+*.pfx
+
+# Trace / staging evidence (may contain SQL fragments or PII)
+docs/dcconcretos-rebuild/evidence/**
+!docs/dcconcretos-rebuild/evidence/README.md
+!docs/dcconcretos-rebuild/evidence/*TEMPLATE*.md

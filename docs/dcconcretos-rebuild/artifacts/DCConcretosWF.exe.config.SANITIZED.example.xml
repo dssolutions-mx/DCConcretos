@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup>
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
+    </startup>
+    <connectionStrings>
+        <add name="Comercial"
+             connectionString="Data Source=YOUR_SQL_HOST\INSTANCE;Initial Catalog=YOUR_COMPANY_DB;User ID=YOUR_APP_LOGIN;Password=USE_SECRET_STORE;"
+             providerName="System.Data.SqlClient" />
+    </connectionStrings>
+    <appSettings>
+        <add key="usuario" value="«APP_USER»" />
+        <add key="password" value="«USE_SECRET_STORE»" />
+        <add key="usuarioContpaqi" value="«CONTPAQI_USER»" />
+        <add key="passwordContpaqi" value="«USE_SECRET_STORE»" />
+        <add key="usaContpaqi" value="1" />
+        <add key="nombreBDEmpresa" value="YOUR_COMPANY_DB" />
+    </appSettings>
+</configuration>
