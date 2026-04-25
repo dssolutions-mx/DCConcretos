@@ -9,7 +9,8 @@ using Microsoft.Extensions.Hosting;
 
 namespace DcConcretos.Desktop;
 
-public partial class App : Application
+// Base class must be fully qualified: sibling namespace DcConcretos.Application shadows System.Windows.Application.
+public partial class App : System.Windows.Application
 {
     public static IHost AppHost { get; private set; } = null!;
 
