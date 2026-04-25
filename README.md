@@ -99,6 +99,12 @@ In the window:
 | [`tests/DcConcretos.Tests/`](tests/DcConcretos.Tests/) | Unit tests |
 | [`.github/workflows/build.yml`](.github/workflows/build.yml) | CI on `windows-latest` |
 
+**CI troubleshooting (common fixes):**
+
+- **ClosedXML / `XLCellValue`:** cell values must not assign a raw `object`; use `Convert.ToString` (or `XLCellValue.FromObject` where supported).
+- **`Application` is a namespace:** the project `DcConcretos.Application` makes the name `Application` ambiguous inside `DcConcretos.Desktop` — inherit from `System.Windows.Application` explicitly in `App.xaml.cs`.
+- **Runner OS:** WPF targets `net8.0-windows`; GitHub Actions must use `windows-latest`, not `ubuntu-latest`.
+
 ---
 
 ## Legacy files on disk
